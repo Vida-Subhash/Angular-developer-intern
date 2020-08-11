@@ -2,11 +2,6 @@
   font-size: 25px;
 }
 
-
-// .example-form {
-
-//   width: 90%;
-// }
 .width {
   width: 90%;
 }
@@ -31,4 +26,37 @@
 .label-1 {
   font-size: 15px;
   font-weight: bold;
+}
+
+.btn-color {
+  color: yellow;
+  border-radius: 15px 15px 15px 15px;
+}
+
+section {
+  display: table;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+
+}
+
+.example-button-row .mat-button-base {
+  margin: 15px 8px 8px 0;
+}
+
+.bank-details {
+  padding-bottom: 15px;
+}
+.fssai-details {
+  padding-bottom:5px;
+
+}
+.gst-details {
+  padding-bottom: 15px;
+}
+#btn {
+  padding-top: 10px;
 }

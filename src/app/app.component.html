@@ -78,62 +78,159 @@
                   </mat-grid-list>
                 </div>
                 </div>
-                <mat-form-field style="padding-top: 20px;" class="example-full-width">
-                  <mat-label>Alternative Phone No.</mat-label>
-                  <span matPrefix>+91 &nbsp;</span>
-                  <input type="tel" matInput placeholder="8097456978" required>
-                </mat-form-field>
-
-        </div>
-
-      </mat-grid-tile>
-        <!-- <mat-grid-tile>
-          <div>
-            <mat-form-field class="example-full-width">
-              <mat-label>Address</mat-label>
-              <input matInput placeholder="School road" required>
-            </mat-form-field>
-        </div>
-        </mat-grid-tile> -->
-      </mat-grid-list>
+                    <mat-form-field style="padding-top: 20px;" class="example-full-width">
+                      <mat-label>Alternative Phone No.</mat-label>
+                      <span matPrefix>+91 &nbsp;</span>
+                      <input type="tel" matInput placeholder="8097456978" required>
+                    </mat-form-field>
+                 </div>
+            </mat-grid-tile>
+          </mat-grid-list>
       </form>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+    <section>
+      <div class="example-button-row">
+        <button mat-stroked-button matStepperNext class="btn-color">Next</button>
+        <button mat-stroked-button class="btn-color">Submit</button>
       </div>
+    </section>
   </mat-step>
   <!-- Tab-2 Bank details -->
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Bank Details</ng-template>
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
+      <mat-grid-list cols="2" rowHeight="200px" gutterSize="10px" >
+        <mat-grid-tile >
+        <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Bank Account No.</mat-label>
+              <input matInput placeholder="Enter Account number" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Bank Name</mat-label>
+              <input matInput placeholder="Enter Name" required>
+            </mat-form-field>
+            <mat-label class="label-1">Upload Bank document :</mat-label>
+            <uploader></uploader>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile >
+
+          <div class="bank-details">
+            <mat-form-field class="example-full-width">
+              <mat-label>Bank IFSC code</mat-label>
+              <input matInput placeholder="Enter Name" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Bank Branch</mat-label>
+              <input matInput placeholder="Enter Name" required>
+            </mat-form-field>
+                      <mat-label style="padding-right: 20px;">Existing image</mat-label>
+                      <mat-icon aria-hidden="false" style="cursor: pointer;">visibility</mat-icon>
+                </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+
     </form>
+    <section>
+      <div class="example-button-row" id="btn">
+        <button mat-stroked-button matStepperNext class="btn-color">Next</button>
+        <button mat-stroked-button class="btn-color">Submit</button>
+      </div>
+    </section>
   </mat-step>
   <!-- Tab-3 FSSAI details -->
   <mat-step>
+    <form [formGroup]="secondFormGroup">
     <ng-template matStepLabel>FSSAI details</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button >Reset</button>
+    <mat-grid-list cols="2" rowHeight="250px" gutterSize="10px" >
+      <mat-grid-tile >
+      <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>License Number</mat-label>
+            <input matInput placeholder="Enter FSSAI License number" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Authorized Address</mat-label>
+            <input matInput placeholder="Enter Address" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" >
+            <mat-label>Validity</mat-label>
+            <span matPrefix>Current :  &nbsp;</span>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field><br>
+          <mat-label class="label-1">Upload FSSAI certificate :</mat-label>
+          <uploader></uploader>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile >
+
+        <div class="fssai-details">
+          <mat-form-field class="example-full-width">
+            <mat-label>Authorized Name</mat-label>
+            <input matInput placeholder="Enter Name" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Career Name</mat-label>
+            <input matInput placeholder="Enter Name" required>
+          </mat-form-field>
+          <div style="padding-top: 70px;" >
+            <mat-label style="padding-right: 20px;">Existing image</mat-label>
+            <mat-icon aria-hidden="false" style="cursor: pointer;">visibility</mat-icon>
+
+          </div>
+              </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+  </form>
+  <section>
+    <div class="example-button-row" id="btn">
+      <button mat-stroked-button matStepperNext class="btn-color">Next</button>
+      <button mat-stroked-button class="btn-color">Submit</button>
     </div>
+  </section>
   </mat-step>
-  <!-- Tab-2 GST details -->
+  <!-- Tab-4 GST details -->
   <mat-step>
+    <form [formGroup]="secondFormGroup">
     <ng-template matStepLabel>GST details</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button >Reset</button>
+    <mat-grid-list cols="2" rowHeight="120px" gutterSize="10px" >
+      <mat-grid-tile >
+      <div >
+          <mat-form-field class="example-full-width">
+            <mat-label>GST Number</mat-label>
+            <input matInput placeholder="Enter GST number" required>
+          </mat-form-field>
+          <mat-label class="label-1">Upload GST certificate :</mat-label>
+          <uploader></uploader>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile >
+
+        <div style="width: 90%;" class="gst-details">
+          <mat-form-field class="example-full-width">
+            <mat-label>Confirm GST Number</mat-label>
+            <input matInput placeholder="Confirm GST number" required>
+          </mat-form-field>
+
+          <div   >
+            <mat-label style="padding-right: 20px;">Existing image</mat-label>
+            <mat-icon aria-hidden="false" style="cursor: pointer;">visibility</mat-icon>
+
+          </div>
+              </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+  </form>
+  <section>
+    <div class="example-button-row" id="btn">
+      <button mat-stroked-button matStepperNext class="btn-color">Next</button>
+      <button mat-stroked-button class="btn-color">Submit</button>
     </div>
+  </section>
   </mat-step>
 </mat-horizontal-stepper>
 </mat-card>
